@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
-import Login from './components/Auth/Login'
+import Login from './components/Auth/login'
 import EmployeeDashboard from './components/DashBoard/Employee'
 import AdminDashboard from './components/DashBoard/Admin'
 import { AuthContext } from './context/AuthContext'
@@ -15,7 +15,7 @@ const App = () => {
     
     if(loggedInUser){
       const userData = JSON.parse(loggedInUser)
-      setUser(userData.role)
+      SetUser(userData.role)
       setLoggedInUserData(userData.data)
     }
 
