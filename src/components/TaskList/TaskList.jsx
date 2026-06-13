@@ -4,20 +4,10 @@ import NewTask from './NewTask'
 import CompleteTask from './CompleteTask'
 import FailedTask from './FailedTask'
 
-const TaskList = ({ data = { tasks: [] } }) => {
-    const tasks = data.tasks || []
-
-    if (!tasks.length) {
-        return (
-            <div id='tasklist' className='h-[50%] flex items-center justify-center w-full py-1 mt-16'>
-                <p className='text-gray-500'>No tasks available</p>
-            </div>
-        )
-    }
-
+const TaskList = ({ data }) => {
     return (
         <div id='tasklist' className='h-[50%] overflow-x-auto flex items-center justify-start gap-5 flex-nowrap w-full py-1 mt-16'>
-            {tasks.map((elem, idx) => {
+            {data.tasks.map((elem, idx) => {
                 if (elem.active) {
                     return <AcceptTask key={idx} data={elem} />
                 }
@@ -30,7 +20,7 @@ const TaskList = ({ data = { tasks: [] } }) => {
                 if (elem.failed) {
                     return <FailedTask key={idx} data={elem} />
                 }
-                return null
+
             })}
         </div>
     )
