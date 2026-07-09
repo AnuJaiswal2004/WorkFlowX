@@ -13,7 +13,7 @@ const startServer = async () => {
         await connectDB();
 
         server.listen(config.port, () => {
-            logger.info(`Server successfully started on port ${config.port} in ${config.nodeEnv} mode`);
+            logger.info(`Server is running on port ${config.port}`);
         });
 
     } catch (err) {

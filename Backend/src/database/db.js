@@ -5,8 +5,8 @@ import { logger } from '../utils/logger.js';
 export const connectDB = async () => {
     try {
         logger.info('Connecting to MongoDB...');
-        const conn = await mongoose.connect(config.mongodbUri);
-        logger.info(`MongoDB Connected: ${conn.connection.host}`);
+        await mongoose.connect(config.mongodbUri);
+        logger.info('Server is connected to DB');
     } catch (error) {
         logger.error(`Database Connection Failure: ${error.message}`);
         // Rethrow the error so that the server bootstrap process exits immediately

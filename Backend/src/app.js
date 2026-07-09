@@ -52,10 +52,7 @@ app.use(morgan(morganFormat, {
 
 // Root check endpoint
 app.get('/', (req, res) => {
-    res.status(200).json({
-        success: true,
-        message: 'WorkFlowX API is active and running.'
-    });
+    res.status(200).send('WorkFlowX Service is up and running');
 });
 
 // Mounting API Routes
